@@ -24,7 +24,7 @@ Que ce soit pour corriger une simple coquille, une petite imprécision, ou pour
 Contribuer sans compte GitHub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Vous pouvez comme dans au bon vieux temps simplement envoyer un e-mail à l'une
+Vous pouvez comme au bon vieux temps simplement envoyer un e-mail à l'une
 des personnes impliquées dans le projet en lui indiquant la modification à
 faire.
 
