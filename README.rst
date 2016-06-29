@@ -33,7 +33,7 @@ Plusieurs méthodes se présentent en fonction de votre niveau d'implication et/
 
 .. note::
 
-  Pour obtenir des droits en écriture directe, il suffit de les demander à l'un des propriétaires.
+   Pour obtenir des droits en écriture directe, il suffit de les demander à l'un des propriétaires.
 
 Qui a contribué au projet
 -------------------------
