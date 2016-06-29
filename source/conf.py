@@ -276,7 +276,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'LivretB2RM.tex', u'Livret B2RM Documentation',
-     u'Laboratoire Paul Painlevé', 'manual'),
+     u'Laboratoire Paul Painlevé', 'howto'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
