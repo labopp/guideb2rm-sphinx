@@ -11,9 +11,9 @@ générateur de documentation Sphinx_.
 Chaque fois que la documentation est mise à jour sur GitHub elle est
 automatiquement transformée en :
 
-- `HTML <https://labopp-guideb2rm.readthedocs.io>`_,
-- `PDF <https://readthedocs.org/projects/labopp-guideb2rm/downloads/pdf/latest/>`_,
-- `EPUB <https://readthedocs.org/projects/labopp-guideb2rm/downloads/epub/latest/>`_.
+-  `HTML <https://labopp-guideb2rm.readthedocs.io>`_,
+-  `PDF <https://readthedocs.org/projects/labopp-guideb2rm/downloads/pdf/latest/>`_,
+-  `EPUB <https://readthedocs.org/projects/labopp-guideb2rm/downloads/epub/latest/>`_.
 
 Comment aider à l'améliorer
 ---------------------------
@@ -61,5 +61,5 @@ utilisant Pandoc_.
 
 La liste des contributeurs dans l'ordre historique :
 
-- ??
-- Kroum Tzanev
+-  ??
+-  Kroum Tzanev
