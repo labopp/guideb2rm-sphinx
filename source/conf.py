@@ -330,7 +330,7 @@ man_pages = [
 texinfo_documents = [
     (master_doc, 'GuideB2RM', u'Guide B2RM',
      author, 'GuideB2RM',
-     'Le guide de la bibliothèque de recherche de mathématiques (Haut de France)',
+     'Le guide de la bibliothèque de recherche de mathématiques (Hauts-de-France)',
      'Miscellaneous'),
 ]
 
