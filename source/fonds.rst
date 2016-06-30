@@ -12,7 +12,6 @@ alphabétique d'auteur.
 
 Les collections telles que par exemple Lectures notes in Mathematics, AMS,
 Contemporary Mathematics etc., sont rangées par numéro dans la collection ;
-
 les congrès et anonymes par numéro d'inventaire ; les thèses par ordre
 alphabétique d'auteur.
 
