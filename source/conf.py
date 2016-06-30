@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Livret B2RM documentation build configuration file, created by
+# Guide B2RM documentation build configuration file, created by
 # sphinx-quickstart on Wed Jun 29 12:57:27 2016.
 #
 # This file is execfile()d with the current directory set to its
@@ -50,7 +50,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Livret B2RM'
+project = u'Guide B2RM'
 copyright = u'2016, Laboratoire Paul Painlevé'
 author = u'Laboratoire Paul Painlevé'
 
@@ -136,7 +136,7 @@ html_theme = 'sphinx_rtd_theme'
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
 #
-# html_title = u'Livret B2RM v1'
+# html_title = u'Guide B2RM v1'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #
@@ -236,7 +236,7 @@ html_static_path = ['_static']
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'LivretB2RMdoc'
+htmlhelp_basename = 'GuideB2RMdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -277,7 +277,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'LivretB2RM.tex', u'Livret B2RM Documentation',
+    (master_doc, 'GuideB2RM.tex', u'Guide de la B2RM',
      u'Laboratoire Paul Painlevé', 'howto'),
 ]
 
@@ -313,7 +313,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'livretb2rm', u'Livret B2RM',
+    (master_doc, 'guideb2rm', u'Guide B2RM',
      [author], 1)
 ]
 
@@ -328,8 +328,9 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'LivretB2RM', u'Livret B2RM',
-     author, 'LivretB2RM', 'One line description of project.',
+    (master_doc, 'GuideB2RM', u'Guide B2RM',
+     author, 'GuideB2RM',
+     'Le guide de la bibliothèque de recherche de mathématiques (Haut de France)',
      'Miscellaneous'),
 ]
 
