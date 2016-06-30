@@ -50,7 +50,7 @@ et/ou de compétence :
 Qui a contribué au projet
 -------------------------
 
-La première version de cette documentation à été créée par ??.
+La première version de cette documentation à été créée par Omar Aouadi.
 
 La première version sous reStructuredText_ a été obtenue par Kroum Tzanev en
 utilisant Pandoc_.
