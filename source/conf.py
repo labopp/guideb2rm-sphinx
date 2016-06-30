@@ -257,21 +257,39 @@ latex_elements = {
      # Additional stuff for the LaTeX preamble.
      # fix temporaire d'un bug ennuyeux de Sphinx 1.4.4 avec \code
      # (espace en trop après inline code) qui sera réglé en 1.4.5
-     'preamble': """\
+     'preamble': u"""\
 \\setlength{\\headheight}{15pt}
 \\makeatletter
+% patch temporaire à retirer dès Sphinx 1.4.5
 \\DeclareRobustCommand{\\code}[1]{{\\@noligs\\scantokens{\\texttt{#1}\\relax}}}
+% insertion du logo et du footer
+\\AtBeginDocument{\\def\\sphinxlogo{% exploitons-le, il est dans \\maketitle
+ \\let\\lpp@title\\@title
+ \\def\\@title{\\vspace{\\parskip}% pour mettre la baseline du titre exactement
+  % au même endroit que Sphinx non hacké.
+  \\hb@xt@\\linewidth % truc pour contrer l'environnement flushright
+  % les -1mm et -2.5mm pour positionner finement le logo
+  {\\kern-1mm\\raisebox{-2.5mm}{\\includegraphics{logonompp.pdf}}%
+   \\hfil\\lpp@title}}}}
+\\renewcommand{\\tableofcontents}{%
+  \\begingroup
+    \\parskip\\z@skip
+    \\py@OldTableofcontents
+  \\endgroup
+  \\vfill
+  \\hrule\\@height\\p@
+  \\noindent\\includegraphics[width=\\linewidth]{labofooter.pdf}
+  \\clearpage
+}  
 \\makeatother
 """,
-
-     # Sphinx 1.5 will allow customization of font in Verbatim, and
-     # particularly the size which so far was forced to be \small
-     #'fvset': '', # override fontsize=\small setting
 
      # Latex figure (float) alignment
      #
      # 'figure_align': 'htbp',
 }
+
+latex_additional_files = ['images/labofooter.pdf', 'images/logonompp.pdf']
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
