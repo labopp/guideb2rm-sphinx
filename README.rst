@@ -61,6 +61,6 @@ utilisant Pandoc_.
 
 La liste des contributeurs dans l'ordre chronologique :
 
--  ??
+-  Omar Aouadi
 -  Kroum Tzanev
 -  Jean-François Burnol
