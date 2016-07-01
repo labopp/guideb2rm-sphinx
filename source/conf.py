@@ -262,31 +262,27 @@ latex_elements = {
 \\makeatletter
 % patch temporaire à retirer dès Sphinx 1.4.5
 \\DeclareRobustCommand{\\code}[1]{{\\@noligs\\scantokens{\\texttt{#1}\\relax}}}
-% insertion du logo et du footer
-\\AtBeginDocument{\\def\\sphinxlogo{% exploitons-le, il est dans \\maketitle
- \\let\\lpp@title\\@title
- \\def\\@title{\\vspace{\\parskip}% pour mettre la baseline du titre exactement
-  % au même endroit que Sphinx non hacké.
-  \\hb@xt@\\linewidth % truc pour contrer l'environnement flushright
-  % les -1mm et -2.5mm pour positionner finement le logo
-  {\\kern-1mm\\raisebox{-2.5mm}{\\includegraphics{logonompp.pdf}}%
-   \\hfil\\lpp@title}}}}
-\\renewcommand{\\tableofcontents}{%
-  \\begingroup
-    \\parskip\\z@skip
-    \\py@OldTableofcontents
-  \\endgroup
-  \\vfill
-  \\hrule\\@height\\p@
-  \\noindent\\includegraphics[width=\\linewidth]{labofooter.pdf}
-  \\clearpage
-}  
 \\makeatother
 """,
 
      # Latex figure (float) alignment
      #
      # 'figure_align': 'htbp',
+
+# je préférerai des centimètres mais par défaut sphinx.sty conserve un 1in
+# de « header ». Donc ici je le double. Mais on pourrait modifier le défaut
+# de Sphinx, et il serait très bien d'utiliser le paquetage geometry pour cela.
+
+     'maketitle': u"""\
+\\vspace*{1in}%
+\\noindent\\includegraphics[width=\\textwidth]{logonompp.pdf}\\par
+\\vfill
+\\centerline{\\smash{\\raisebox{-\\height}{\\makebox[0pt]%
+{\\includegraphics[width=\\dimexpr\\paperwidth-1cm\\relax]{labofooter.pdf}}}}}%
+\\newpage\\null\\clearpage
+\\pagenumbering{arabic}\pagestyle{plain}%
+\\maketitle
+""",
 }
 
 latex_additional_files = ['images/labofooter.pdf', 'images/logonompp.pdf']
