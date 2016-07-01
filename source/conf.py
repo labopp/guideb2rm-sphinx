@@ -262,6 +262,20 @@ latex_elements = {
 \\makeatletter
 % patch temporaire à retirer dès Sphinx 1.4.5
 \\DeclareRobustCommand{\\code}[1]{{\\@noligs\\scantokens{\\texttt{#1}\\relax}}}
+% pour forcer l'absence de retraits des listes description même si frenchb 3.0+
+\\ifdefined\\listindentFB
+\\def\\descriptionFB{%
+    \\list{}{\\FB@listHsettings
+    \\labelwidth\\z@
+    \\itemindent-\\leftmargin
+    \\ifnum\\@listdepth=1
+    \\advance\\itemindent by \\laboppdescriptionindent\\relax% \\listindentFB
+    \\fi
+    \\let\\makelabel\\descriptionlabel}%
+}%
+\\fi
+\\def\\laboppdescriptionindent{0pt}% force comportement d'avant frenchb 3.0a
+% pour ne rien changer utiliser \\listindentFB à la place de 0pt
 \\makeatother
 """,
 
