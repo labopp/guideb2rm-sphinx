@@ -269,7 +269,7 @@ latex_elements = {
      #
      # 'figure_align': 'htbp',
 
-# je préférerai des centimètres mais par défaut sphinx.sty conserve un 1in
+# je préférerais des centimètres mais par défaut sphinx.sty conserve un 1in
 # de « header ». Donc ici je le double. Mais on pourrait modifier le défaut
 # de Sphinx, et il serait très bien d'utiliser le paquetage geometry pour cela.
 
