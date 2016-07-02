@@ -274,6 +274,8 @@ latex_elements = {
 # de Sphinx, et il serait très bien d'utiliser le paquetage geometry pour cela.
 
      'maketitle': u"""\
+\\pagenumbering{alph}% pour éviter "duplicate ignored" warning de hyperref
+% autre work-around possible: faire à la place \\setcounter{page}{-2}
 \\vspace*{1in}%
 \\noindent\\includegraphics[width=\\textwidth]{logonompp.pdf}\\par
 \\vfill
