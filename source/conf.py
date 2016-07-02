@@ -261,7 +261,7 @@ frontpageTemplate = Template(u"""
 \\noindent\\includegraphics[width=.35\\textwidth]{logonompp.pdf}\\par
 \\vfill
 \\begin{center}
-    \\bfseries
+    \\sffamily\\bfseries
     \\Huge {{title}} \\par
     {{year}}\\par
     \\vspace{7mm}
@@ -291,23 +291,20 @@ frontpage = frontpageTemplate.render(
     title=title, author=author, year=year, copyright=copyright, github=github, readthedocs=readthedocs)
 
 latex_elements = {
-     # The paper size ('letterpaper' or 'a4paper').
-     #
-     'papersize': 'a4paper',
+    # The paper size ('letterpaper' or 'a4paper').
+    #
+    'papersize': 'a4paper',
 
-     # The font size ('10pt', '11pt' or '12pt').
-     #
-     'pointsize': '12pt',
+    # The font size ('10pt', '11pt' or '12pt').
+    #
+    'pointsize': '12pt',
 
-     'fontpkg': """\
-\\usepackage[lining]{libertine}
-\\usepackage[varqu,varl]{inconsolata}
-""",
+    'fontpkg': '\\usepackage{txfonts}',
 
-     # Additional stuff for the LaTeX preamble.
-     # fix temporaire d'un bug ennuyeux de Sphinx 1.4.4 avec \code
-     # (espace en trop après inline code) qui sera réglé en 1.4.5
-     'preamble': u"""\
+    # Additional stuff for the LaTeX preamble.
+    # fix temporaire d'un bug ennuyeux de Sphinx 1.4.4 avec \code
+    # (espace en trop après inline code) qui sera réglé en 1.4.5
+    'preamble': u"""\
 \\setlength{\\headheight}{15pt}
 \\makeatletter
 % patch temporaire à retirer dès Sphinx 1.4.5
@@ -315,15 +312,11 @@ latex_elements = {
 \\makeatother
 """,
 
-     # Latex figure (float) alignment
-     #
-     # 'figure_align': 'htbp',
+    # Latex figure (float) alignment
+    #
+    # 'figure_align': 'htbp',
 
-# je préférerais des centimètres mais par défaut sphinx.sty conserve un 1in
-# de « header ». Donc ici je le double. Mais on pourrait modifier le défaut
-# de Sphinx, et il serait très bien d'utiliser le paquetage geometry pour cela.
-
-     'maketitle': frontpage+"\n\\maketitle",
+    'maketitle': frontpage+"\n\\maketitle",
 }
 
 latex_additional_files = ['images/labofooter.pdf', 'images/logonompp.pdf', 'images/couverture.jpg']
