@@ -20,7 +20,21 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+from jinja2 import Template
+
 # -- General configuration ------------------------------------------------
+
+# General information about the project.
+project = u'Guide B2RM'
+filename = u'GuideB2RM'
+year = u'2016'
+author = u'Laboratoire Paul Painlevé'
+title = u'Guide de la B2RM'
+description = u'Le guide de la bibliothèque de recherche de mathématiques (Hauts-de-France)'
+github = u'guideb2rm-sphinx'
+readthedocs = u'labopp-guideb2rm'
+copyright = year + u', ' + author
+
 
 # If your documentation needs a minimal Sphinx version, state it here.
 #
@@ -48,11 +62,6 @@ source_suffix = '.rst'
 
 # The master toctree document.
 master_doc = 'index'
-
-# General information about the project.
-project = u'Guide B2RM'
-copyright = u'2016, Laboratoire Paul Painlevé'
-author = u'Laboratoire Paul Painlevé'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -236,9 +245,50 @@ html_static_path = ['_static']
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'GuideB2RMdoc'
+htmlhelp_basename = filename+'doc'
 
 # -- Options for LaTeX output ---------------------------------------------
+
+# Grouping the document tree into LaTeX files. List of tuples
+# (source start file, target name, title,
+#  author, documentclass [howto, manual, or own class]).
+latex_documents = [
+    (master_doc, filename+'.tex', title, author, 'howto'),
+]
+
+frontpageTemplate = Template(u"""
+\\pagenumbering{alph} % pour éviter "duplicate ignored" warning de hyperref
+\\noindent\\includegraphics[width=.35\\textwidth]{logonompp.pdf}\\par
+\\vfill
+\\begin{center}
+    \\bfseries
+    \\Huge {{title}} \\par
+    {{year}}\\par
+    \\vspace{7mm}
+    \\includegraphics[width=7cm]{couverture.jpg}\\par
+    \\vspace{7mm}
+    \\large {{author}}
+\\end{center}
+\\vfill
+\\centerline{\\smash{\\raisebox{-\\height}{\\makebox[0pt]%
+{\\includegraphics[width=\\dimexpr\\paperwidth-1cm\\relax]{labofooter.pdf}}}}}%
+\\newpage
+\\vspace*{\\fill}
+\\copyright{{copyright}}\\ \\par
+Photo de la couverture : Livre \\textit{« Leçons sur la théorie analytique des équations différentielles :
+professées à Stockholm, septembre, octobre, novembre 1895,
+sur l'invitation de S. M. le Roi de Suède et de Norwège »}
+de Paul Painlevé (Editeur : Paris : Hermann, 1897)\\par
+Pour améliorer cette documentation, rendez vous à : \\newline
+\\hfill\\url{https://github.com/labopp/{{github}}}.\\par
+Pour voir la version html, rendez vous à : \\newline
+\\hfill\\url{https://{{readthedocs}}.readthedocs.io}.\\par
+\\clearpage
+\\pagenumbering{arabic}\pagestyle{plain}%
+""")
+
+frontpage = frontpageTemplate.render(
+    title=title, author=author, year=year, copyright=copyright, github=github, readthedocs=readthedocs)
 
 latex_elements = {
      # The paper size ('letterpaper' or 'a4paper').
@@ -273,29 +323,10 @@ latex_elements = {
 # de « header ». Donc ici je le double. Mais on pourrait modifier le défaut
 # de Sphinx, et il serait très bien d'utiliser le paquetage geometry pour cela.
 
-     'maketitle': u"""\
-\\pagenumbering{alph}% pour éviter "duplicate ignored" warning de hyperref
-% autre work-around possible: faire à la place \\setcounter{page}{-2}
-\\vspace*{1in}%
-\\noindent\\includegraphics[width=\\textwidth]{logonompp.pdf}\\par
-\\vfill
-\\centerline{\\smash{\\raisebox{-\\height}{\\makebox[0pt]%
-{\\includegraphics[width=\\dimexpr\\paperwidth-1cm\\relax]{labofooter.pdf}}}}}%
-\\newpage\\null\\clearpage
-\\pagenumbering{arabic}\pagestyle{plain}%
-\\maketitle
-""",
+     'maketitle': frontpage+"\n\\maketitle",
 }
 
-latex_additional_files = ['images/labofooter.pdf', 'images/logonompp.pdf']
-
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title,
-#  author, documentclass [howto, manual, or own class]).
-latex_documents = [
-    (master_doc, 'GuideB2RM.tex', u'Guide de la B2RM',
-     u'Laboratoire Paul Painlevé', 'howto'),
-]
+latex_additional_files = ['images/labofooter.pdf', 'images/logonompp.pdf', 'images/couverture.jpg']
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
@@ -329,7 +360,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'guideb2rm', u'Guide B2RM',
+    (master_doc, filename.lower(), project,
      [author], 1)
 ]
 
@@ -344,10 +375,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'GuideB2RM', u'Guide B2RM',
-     author, 'GuideB2RM',
-     'Le guide de la bibliothèque de recherche de mathématiques (Hauts-de-France)',
-     'Miscellaneous'),
+    (master_doc, filename, project, author, filename, description, 'Miscellaneous'),
 ]
 
 # Documents to append as an appendix to all manuals.
