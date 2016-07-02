@@ -6,8 +6,8 @@ La bibliothèque dispose d'un fonds documentaire constitué de 16 000 ouvrages
 périodiques en libre accès, dont 190 titres vivants, et d'une collection de
 revues en ligne donnant accès au texte intégral.
 
-Elle occupe 2 niveaux avec : au rez-de-chaussée les collections de
-périodiques spécialisés ; à l'étage les ouvrages classés par ordre
+Elle occupe 2 niveaux avec au rez-de-chaussée les collections de
+périodiques spécialisés et à l'étage les ouvrages classés par ordre
 alphabétique d'auteur.
 
 Les collections telles que par exemple Lectures notes in Mathematics, AMS,
