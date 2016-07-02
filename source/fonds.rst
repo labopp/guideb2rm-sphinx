@@ -6,7 +6,7 @@ La bibliothèque dispose d'un fonds documentaire constitué de 16 000 ouvrages
 périodiques en libre accès, dont 190 titres vivants et d'une collection de
 revues en ligne donnant accès à du texte intégral.
 
-Elle occupe , sur 2 niveaux avec au rez-de-chaussée, les collections de
+Elle occupe, sur 2 niveaux avec au rez-de-chaussée, les collections de
 périodiques spécialisés et à l'étage, les ouvrages, classés par ordre
 alphabétique d'auteur.
 
